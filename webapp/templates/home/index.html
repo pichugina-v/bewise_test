@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <div class='container'>
+    <div class='row'>
+      <div class='col-8'>
+        <h1>Главная страница</h1>
+      </div>
+    </div>
+  </div>
+  <div class='col-4'>
+    <div class="container-fluid">
+        <form method="post">
+          <label for="questions_num">Введите запрашиваемое количество вопросов: </label>
+          <input type="number" name="questions_num">
+          <input type="submit" value="Искать">
+        </form>
+    </div>
+  </div>
+{% endblock %}
