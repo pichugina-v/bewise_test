@@ -16,10 +16,11 @@
   </div>
   <div class='col-4'>
     <div class="container-fluid">
-        <form method="post">
+        {{ wtf.quick_form(form) }}
+        <!-- <form method="post">
           <label for="questions_num">Введите запрашиваемое количество вопросов: </label>
           <input type="number" name="questions_num">
-          <input type="submit" value="Искать">
+          <input type="submit" value="Искать"> -->
         </form>
     </div>
   </div>
