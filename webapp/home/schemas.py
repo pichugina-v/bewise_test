@@ -6,4 +6,3 @@ class QuestionSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = QuizInfo
         fields = ('question', )
-
