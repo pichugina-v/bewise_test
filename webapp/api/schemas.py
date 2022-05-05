@@ -1,5 +1,5 @@
 from webapp.ma import ma
-from webapp.quiz.models import QuizInfo
+from .models import QuizInfo
 
 
 class QuestionSchema(ma.SQLAlchemyAutoSchema):
