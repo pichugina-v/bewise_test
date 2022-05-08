@@ -1,7 +1,6 @@
-import datetime
 import requests
 from datetime import datetime as dt
-from typing import Callable, Dict, List, Union
+from typing import Dict, List, Union
 
 from webapp.db import db
 from .models import QuizInfo
@@ -16,7 +15,6 @@ def get_and_save_response(questions_num: int) -> None:
     response = requests.get(
         URL.format(num=questions_num)
     ).json()
-    print(response)
     for question_info in response:
         if not bool(QuizInfo.query.filter_by(
             question=question_info.get('question')

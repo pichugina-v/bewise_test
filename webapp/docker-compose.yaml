@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - /var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: python __init__.py run -h 0.0.0.0
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
