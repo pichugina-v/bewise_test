@@ -36,12 +36,27 @@ sudo docker-compose exec web flask db upgrade
 ```
 
 # Примеры использования:
-* Для создания нового поста отправьте POST-запрос на адрес http://127.0.0.1:5000/api/. В запросе обязательно передать
+
+* CURL:
+```python
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"questions_num": 1}' \
+     http://127.0.0.1:5000/api
+```
+
+* Postman raw:
+```python
+{
+    "questions_num": 1
+}
+```
+
+* Postman form-data. Отправьте POST-запрос на адрес http://127.0.0.1:5000/api. В запросе обязательно передать
 ```python
 questions_num: <integer>
 ```
 
-* Примеры ответа:
+* Примеры ответов:
 ```python
 {
     "question": "The most recent of these devices can achieve accuracy to within about 1 second in every 3 million years"
