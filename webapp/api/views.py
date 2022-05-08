@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from typing import Dict, Tuple, Union
+from typing import Any, Dict, Optional, Tuple, Union
 
 from .models import QuizInfo
 from .schemas import QuestionSchema
@@ -10,12 +10,14 @@ blueprint = Blueprint('home', __name__)
 ZERO_VALUE_ERROR = "Value must be greater than 0"
 DATA_TYPE_ERROR = "Incorrect data type, must be integer instead"
 
-
 @blueprint.route('/api', methods=['POST'])
-def index() -> Union[Tuple[str, int], Tuple[Dict[str, str], int]]:
+def index():
     num: Union[int, str]
 
-    num = request.form['questions_num']
+    if request.content_type.startswith('application/json'):
+        num = request.json['questions_num']
+    else:
+        num = request.form['questions_num']
     try:
         num = int(num)
         if num == 0:
