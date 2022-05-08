@@ -11,7 +11,7 @@ URL = 'https://jservice.io/api/random?count={num}'
 def get_and_save_response(questions_num: int) -> None:
     response: List
     question_info: Dict[str, Union[int, str]]
-    
+
     response = requests.get(
         URL.format(num=questions_num)
     ).json()

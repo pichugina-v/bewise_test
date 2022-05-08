@@ -14,7 +14,7 @@ def create_app():
     app.config.from_pyfile('config.py')
     db.init_app(app)
     ma.init_app(app)
-    migrate = Migrate(app, db, render_as_batch=True)
+    Migrate(app, db, render_as_batch=True)
 
     app.register_blueprint(home_blueprint)
 
