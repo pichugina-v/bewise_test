@@ -14,8 +14,8 @@ pip3 install -r requirements.txt
 * В директории `webapp` проекта создайте файл `.env` и заполните переменные окружения
 ```python
 POSTGRES_DB=quiz
-POSTGRES_USER=<логин для подключения к базе данных> (quiz_user)
-POSTGRES_PASSWORD=<пароль для подключения к базе данных> (5372)
+POSTGRES_USER=<логин для подключения к базе данных>
+POSTGRES_PASSWORD=<пароль для подключения к базе данных>
 POSTGRES_PORT=5432
 POSTGRES_HOST=db
 ```
